@@ -1,6 +1,7 @@
 import React from "react";
 import './Main.css';
 import AnimalCard from '../animalCard/AnimalCard'
+import NewAnimal from '../newAnimal/NewAnimal';
 
 
 class Main extends React.Component {
@@ -39,11 +40,19 @@ class Main extends React.Component {
         })
     }
 
+    createNew = (animal, e) =>{
+        e.preventDefault();
+        const copy = [...this.state.list];
+        copy.unshift(animal);
+        this.setState({list: copy});
+    }
+
 
 
      render(){
         return(
             <div className="list-container">
+                <div className="formy-form"><NewAnimal createNew={this.createNew} /></div>
                 <ul className="animal-list">
                     {this.showAnimals()}
                 </ul>

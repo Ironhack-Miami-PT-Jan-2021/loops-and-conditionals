@@ -14,3 +14,9 @@
     padding-left: 7%;
 
 }
+
+.formy-form{
+    position: fixed;
+    right: 250px;
+    top: 100px;
+}
